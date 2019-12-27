@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import "./style.css";
 import UserName from "./UserName";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Details from './Details';
+import Details from "./Details";
 
 class App extends Component {
   constructor() {
@@ -14,17 +14,17 @@ class App extends Component {
     };
   }
 
-  search() {
+  search = async () => {
     const url = `https://api.github.com/search/users?q=`;
     console.log(`${url}${this.state.searchText}`);
 
-    fetch(`${url}${this.state.searchText}`, { method: "GET" })
-      .then(response => response.json())
-      .then(json => {
-        let { items } = json;
-        this.setState({ userNames: items });
-      });
-  }
+    const result = await fetch(`${url}${this.state.searchText}`, {
+      method: "GET"
+    });
+    const formatted = await result.json();
+    let { items } = formatted;
+    this.setState({ userNames: items });
+  };
 
   render() {
     return (

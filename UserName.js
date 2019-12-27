@@ -22,7 +22,7 @@ class UserName extends Component {
         <li>
           <Link
             to={{ pathname: "/details" , 
-            state : { result }}}
+            state :  result }}
             className="nav-link"
           >
             About
