@@ -1,0 +1,27 @@
+h1, p {
+  font-family: Lato;
+  
+}
+
+li{
+ cursor: pointer
+}
+
+.Global{
+ text-align: center;
+ padding: 10px;
+}
+
+.avatar-img{
+  height: 220px;
+  width: 200px;
+  border: 4px solid #000;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.main{
+  float: left;
+  padding-right: 20px;
+}
+
