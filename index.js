@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import "./style.css";
 import UserName from "./UserName";
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Details from './Details';
 
 class App extends Component {
   constructor() {
@@ -54,7 +55,10 @@ class App extends Component {
 
 render(
   <BrowserRouter>
-    <App />
+    <Switch>
+      <Route exact path="/" component={App} />
+      <Route path="/details" component={Details} />
+    </Switch>
   </BrowserRouter>,
   document.getElementById("root")
 );

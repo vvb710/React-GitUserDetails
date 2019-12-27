@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import Details from "./Details";
 import App from "./index";
 
@@ -19,24 +19,23 @@ class UserName extends Component {
     return (
       <div className="main">
         <img className="avatar-img" src={avatar_url} alt="avatar" />
-        {/*<li>
-          <Link to={`/details/${id}`} className="nav-link">
+        <li>
+          <Link
+            to={{ pathname: "/details" , 
+            state : { result }}}
+            className="nav-link"
+          >
             About
           </Link>
-        </li>*/}
+        </li>
         <li onClick={this.onNameClick}>{result.login}</li>
-        {this.state.isDetailsVisible && (
+        {/*this.state.isDetailsVisible && (
           <div>
             <p>Score:{score}</p>
             <p>Id:{id}</p>
             <p>URL:{url}</p>
           </div>
-        )}
-
-       {/* <Switch>
-          <Route exact path="/" component={App} />
-          <Route path="/details/:id" component={Details} />
-        </Switch>*/}
+        )*/}
       </div>
     );
   }

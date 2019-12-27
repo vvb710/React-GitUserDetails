@@ -1,9 +1,20 @@
 import React, { Component } from "react";
-import { Switch, Route, Link } from "react-router-dom";
 
 class Details extends Component {
   render() {
-    return <div className="main">abcd{this.props.match.id}</div>;
+    console.log(this.props.location.state.result);
+    let result = this.props.location.state;
+    let { login, id, score, url, avatar_url } = result;
+    return (
+      <div className="main">
+        <img className="avatar-img" src={avatar_url} alt="avatar" />
+        <div>
+            <p>Score:{score}</p>
+            <p>Id:{id}</p>
+            <p>URL:{url}</p>
+          </div>
+      </div>
+    );
   }
 }
 export default Details;
